@@ -3,15 +3,18 @@ import styled, { css } from "styled-components";
 
 const Styled = styled.button(
   ({ color }) => css`
-    background-color: ${color};
-    border-radius: 50%;
-    color: white;
-    padding: 6px 10px;
-    text-align: center;
-    display: inline-block;
-    border-radius: 4px;
-    margin: 2px;
-    font-size: 14px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 12px;
+  margin-top: 8px;
+
+  &:hover {
+    background-color: #5aac44;
+  }
   `,
 );
 

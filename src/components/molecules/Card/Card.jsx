@@ -5,17 +5,12 @@ import Button from "../../atoms/Button";
 import DestroyWindow from "../DestroyWindow";
 
 const StyledCard = styled.div`
-  background: #e2e2e2;
-  width: 300px;
-  height: 300px;
-  display: flex;
-  font-size: 24px;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 8px;
-  margin: 8px;
-  padding: 8px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin: 10px;
+  padding: 16px;
+  width: 200px;
 `;
 
 const RowStyled = styled.div`
@@ -45,11 +40,9 @@ const Card = ({ id = 1, name = "", description = "", createdAt = "" }) => {
         <CardText> {description} </CardText>
         <CardTitle> Created at: </CardTitle>
         <CardText> {createdAt} </CardText>
-        <RowStyled>
           <Link href={`project/${id}/tasks`} color="purple" label="Task" />
           <Link href="#" color="gray" label="Edit" />
-          <Button onClick={() => setIsDestroyModalOpen(true)} color="red" label="Destroy" />
-        </RowStyled>
+          <Button onClick={() => setIsDestroyModalOpen(true)} color="red" label="Delete" />
       </div>
       {isDestroyModalObject && (
         <DestroyWindow
