@@ -3,18 +3,16 @@ import styled, { css } from "styled-components";
 
 const Styled = styled.button(
   ({ color }) => css`
-  border: none;
-  border-radius: 3px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 8px 12px;
-  margin-top: 8px;
-
-  &:hover {
-    background-color: #5aac44;
-  }
+      background: ${color};
+      border: none;
+      border-radius: 3px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 8px 12px;
+      margin-top: 8px;
+    }
   `,
 );
 

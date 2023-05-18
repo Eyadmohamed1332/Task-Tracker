@@ -10,9 +10,9 @@ const MyFact = styled.li`
 const MyList = styled.ul`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
-  padding: 20px;
+  min-height: calc(100vh - 41px);
 `;
 
 const onClick = () => {
@@ -26,8 +26,8 @@ const HomePage = () => {
         <MyFact> I love Sports </MyFact>
         <MyFact> I prefer silence </MyFact>
         <MyFact> I like challenges </MyFact>
+        <Button onClick={onClick} label="hello"/>
       </MyList>
-      <Button onClick={onClick} label="hello"/>
     </DefaultTemplate>
   );
 };

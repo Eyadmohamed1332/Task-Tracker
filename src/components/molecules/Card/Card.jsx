@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Link from "../../atoms/Link";
 import Button from "../../atoms/Button";
-import DestroyWindow from "../DestroyWindow";
+import ModalWindow from "../../atoms/ModalWindow/ModalWindow";
 
 const StyledCard = styled.div`
   background-color: #fff;
@@ -10,7 +10,12 @@ const StyledCard = styled.div`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   margin: 10px;
   padding: 16px;
-  width: 200px;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: row;
+  align-items: center;
 `;
 
 const RowStyled = styled.div`
@@ -20,18 +25,32 @@ const RowStyled = styled.div`
 
 const CardTitle = styled.div`
   font-weight: bold;
+  margin-top: 20px;
 `;
 
 const CardText = styled.div`
   word-break: break-all;
+  margin-top: 20px;
 `;
 
 const Card = ({ id = 1, name = "", description = "", createdAt = "" }) => {
-  const [isDestroyModalObject, setIsDestroyModalOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  }
+
+  const deleteProject = () => {
+    console.log("Project deleted.");
+    closeModal();
+  }
+  
+  const openModal = () => {
+    setModalIsOpen(true);
+  }
 
   return (
     <StyledCard>
-      <div>
         <CardTitle> Name: </CardTitle>
         <CardText>
           <Link href={`project/${id}`} color="green" label={name} />
@@ -42,17 +61,17 @@ const Card = ({ id = 1, name = "", description = "", createdAt = "" }) => {
         <CardText> {createdAt} </CardText>
           <Link href={`project/${id}/tasks`} color="purple" label="Task" />
           <Link href="#" color="gray" label="Edit" />
-          <Button onClick={() => setIsDestroyModalOpen(true)} color="red" label="Delete" />
-      </div>
-      {isDestroyModalObject && (
-        <DestroyWindow
-          isOpen={isDestroyModalObject}
-          projectName={`project ${name}`}
-          setIsOpen={setIsDestroyModalOpen}
-        />
-      )}
+          <Button onClick={openModal} color="red" label="Delete" />
+          {modalIsOpen && (
+            <ModalWindow 
+              modalIsOpen={modalIsOpen} 
+              closeModal={closeModal} 
+              deleteProject={deleteProject} 
+            />
+          )}
     </StyledCard>
   );
 };
+
 
 export default Card;

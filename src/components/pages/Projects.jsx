@@ -8,6 +8,9 @@ import Card from "../molecules/Card";
 
 const MyCard = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   flex-wrap: wrap;
   justify-content: flex-start;
 `;
@@ -67,6 +70,48 @@ const MyProjects = [
     description: "Project (9)",
     createdAt: "22 days ago",
   },
+  {
+    id: 9,
+    name: "Project #9",
+    description: "Project (9)",
+    createdAt: "22 days ago",
+  },
+  {
+    id: 9,
+    name: "Project #9",
+    description: "Project (9)",
+    createdAt: "22 days ago",
+  },
+  {
+    id: 9,
+    name: "Project #9",
+    description: "Project (9)",
+    createdAt: "22 days ago",
+  },
+  {
+    id: 9,
+    name: "Project #9",
+    description: "Project (9)",
+    createdAt: "22 days ago",
+  },
+  {
+    id: 9,
+    name: "Project #9",
+    description: "Project (9)",
+    createdAt: "22 days ago",
+  },
+  {
+    id: 9,
+    name: "Project #9",
+    description: "Project (9)",
+    createdAt: "22 days ago",
+  },
+  {
+    id: 9,
+    name: "Project #9",
+    description: "Project (9)",
+    createdAt: "22 days ago",
+  },
 ];
 
 const Projects = () => {
@@ -83,7 +128,6 @@ const Projects = () => {
   ));
   return (
     <DefaultTemplate>
-      <Button label="Home page" onClick={() => navigate(-1)} />
       <MyCard>{groupProjectCard}</MyCard>
     </DefaultTemplate>
   );
