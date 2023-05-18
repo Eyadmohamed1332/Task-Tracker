@@ -19,11 +19,6 @@ const StyledCard = styled.div`
   align-items: center;
 `;
 
-const RowStyled = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
 const CardTitle = styled.div`
   font-weight: bold;
   margin-top: 20px;

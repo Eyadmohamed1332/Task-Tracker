@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { v4 } from "uuid";
-import { useNavigate } from "react-router-dom";
 import DefaultTemplate from "../templates/DefaultTemplate";
-import Button from "../atoms/Button";
 import Card from "../molecules/Card";
 
 const MyCard = styled.div`
@@ -115,7 +113,6 @@ const MyProjects = [
 ];
 
 const Projects = () => {
-  const navigate = useNavigate();
 
   const groupProjectCard = MyProjects.map((project) => (
     <Card
