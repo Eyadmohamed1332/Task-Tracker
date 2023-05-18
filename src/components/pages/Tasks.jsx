@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import DefaultTemplate from "../templates/DefaultTemplate";
 import Button from "../atoms/Button";
+import styled from "styled-components"
 
 const TasksPage = () => {
   const navigate = useNavigate();

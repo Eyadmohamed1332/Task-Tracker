@@ -3,12 +3,13 @@ import styled from "styled-components";
 import Link from "../../atoms/Link";
 import Button from "../../atoms/Button";
 import ModalWindow from "../../atoms/ModalWindow/ModalWindow";
+import { useNavigate } from "react-router-dom";
 
 const StyledCard = styled.div`
-  background-color: #fff;
+  background-color: #606060;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  margin: 10px;
+  margin: 2px;
   padding: 16px;
   width: 95%;
   display: flex;
@@ -35,6 +36,7 @@ const CardText = styled.div`
 
 const Card = ({ id = 1, name = "", description = "", createdAt = "" }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const closeModal = () => {
     setModalIsOpen(false);
@@ -49,19 +51,23 @@ const Card = ({ id = 1, name = "", description = "", createdAt = "" }) => {
     setModalIsOpen(true);
   }
 
+  const goToTasks = () => {
+    navigate(`/project/${id}/tasks`);
+  };
+
   return (
     <StyledCard>
-        <CardTitle> Name: </CardTitle>
+        <CardTitle>Name:</CardTitle>
         <CardText>
           <Link href={`project/${id}`} color="green" label={name} />
         </CardText>
-        <CardTitle> Description: </CardTitle>
+        <CardTitle>Description:</CardTitle>
         <CardText> {description} </CardText>
-        <CardTitle> Created at: </CardTitle>
+        <CardTitle>Created:</CardTitle>
         <CardText> {createdAt} </CardText>
-          <Link href={`project/${id}/tasks`} color="purple" label="Task" />
-          <Link href="#" color="gray" label="Edit" />
-          <Button onClick={openModal} color="red" label="Delete" />
+          <Button onClick={goToTasks} color="blue" label="Tasks" />          
+          <Button href="#" color="green" label="Edit" />
+          <Button onClick={openModal} color="red" label="Destroy" />
           {modalIsOpen && (
             <ModalWindow 
               modalIsOpen={modalIsOpen} 

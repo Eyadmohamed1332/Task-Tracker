@@ -5,6 +5,7 @@ import Button from "../atoms/Button";
 
 const MyFact = styled.li`
   font-size: 15px;
+  color: white;
 `;
 
 const MyList = styled.ul`
