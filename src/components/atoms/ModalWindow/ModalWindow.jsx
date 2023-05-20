@@ -7,7 +7,7 @@ const YesButton = styled.button`
     margin: 1em;
     padding: 0.25em 1em;
     border-radius: 100px;
-    background-color: #007BFF;
+    background-color: red;
     color: white;
 `;
 
@@ -16,13 +16,14 @@ const NoButton = styled.button`
   margin: 1em;
   padding: 0.25em 1em;
   border-radius: 100px;
-  background-color: #800080;
+  background-color: blue;
   color: white;
 `;
 
 const ButtonsContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   width: 100%;
 `;
 
@@ -31,9 +32,10 @@ const ModalContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f5f5f5;
+  background-color: #404040;
   padding: 2em;
   border-radius: 10px;
+  color: white;
 `;
 
 const ModalWindow = ({modalIsOpen, openModal, closeModal, deleteProject}) => {

@@ -9,7 +9,7 @@ const TasksPage = () => {
 
   return (
     <DefaultTemplate>
-      <Button label="Tasks" onClick={() => navigate(-1)} />
+      <Button label="Back" onClick={() => navigate(-1)} />
       My post {projectId}
     </DefaultTemplate>
   );

@@ -27,6 +27,10 @@ const ForButton = styled.div`
   
     useEffect(() => {
       document.addEventListener("scroll", onScroll);
+      return () => {
+        document.removeEventListener("scroll", onScroll)
+
+      }
     }, []);
   
     const onClick = () => {
